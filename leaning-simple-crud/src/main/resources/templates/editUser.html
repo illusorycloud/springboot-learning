@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<form th:action="@{/user/editUser}" method="post">
+    <input type="hidden" name="uname" th:field="${user.uid}"><br/>
+    用户名:<input type="text" name="uname" th:field="${user.uname}"><br/>
+    年龄：<input type="text" name="uage" th:field="${user.uage}"><br/>
+    <input type="submit" name="修改"><br/>
+</form>
+
+</body>
+</html>

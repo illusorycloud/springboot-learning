@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+                      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>InsertUser</title>
+</head>
+<body>
+<form th:action="@{/user/addUser}" method="post">
+    用户名:<input type="text" name="uname"><br/>
+    年龄：<input type="text" name="uage"><br/>
+    <input type="submit" name="添加"><br/>
+</form>
+</body>
+</html>
