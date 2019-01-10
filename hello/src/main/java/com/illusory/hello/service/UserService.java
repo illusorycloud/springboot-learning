@@ -1,13 +1,13 @@
-package com.illusory.demodao.mapper;
+package com.illusory.hello.service;
 
-import com.illusory.demodao.pojo.User;
+import com.illusory.hello.pojo.User;
 
 import java.util.List;
 
 /**
- * Mapper
+ * Service
  */
-public interface UserMapper {
+public interface UserService {
     void addUser(User user);
     List<User> queryAll();
     User findUserById(Integer id);

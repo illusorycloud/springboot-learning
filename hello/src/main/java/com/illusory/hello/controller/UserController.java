@@ -1,7 +1,7 @@
-package com.illusory.demodao.controller;
+package com.illusory.hello.controller;
 
-import com.illusory.demodao.pojo.User;
-import com.illusory.demodao.service.Impl.UserService;
+import com.illusory.hello.pojo.User;
+import com.illusory.hello.service.Impl.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,7 +26,7 @@ public class UserController {
     @RequestMapping("/addUser") //user/addUser
     public String addUser(User user) {
         userService.addUser(user);
-        return "redirect:/user/findAll";
+        return "redirect:/user/queryAll";
     }
 
     /**
@@ -79,7 +79,7 @@ public class UserController {
     public String editUser(User user, Model model) {
         userService.updateUser(user);
         //重定向到查询界面
-        return "redirect:/user/findAll";
+        return "redirect:/user/queryAll";
     }
 
     /**
@@ -91,6 +91,6 @@ public class UserController {
     @RequestMapping("/deleteUserById")
     public String editUser(Integer id) {
         userService.deleteUserById(id);
-        return "redirect:/user/findAll";
+        return "redirect:/user/queryAll";
     }
 }

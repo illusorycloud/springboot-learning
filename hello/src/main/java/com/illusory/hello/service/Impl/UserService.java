@@ -1,7 +1,7 @@
-package com.illusory.demodao.service.Impl;
+package com.illusory.hello.service.Impl;
 
-import com.illusory.demodao.mapper.UserMapper;
-import com.illusory.demodao.pojo.User;
+import com.illusory.hello.mapper.UserMapper;
+import com.illusory.hello.pojo.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 @Transactional //事务
-public class UserService implements com.illusory.demodao.service.UserService {
+public class UserService implements com.illusory.hello.service.UserService {
     @Resource
     private UserMapper userMapper;
 

@@ -1,4 +1,4 @@
-package com.illusory.demodao.pojo;
+package com.illusory.hello.pojo;
 
 public class User {
     private Integer uid;
