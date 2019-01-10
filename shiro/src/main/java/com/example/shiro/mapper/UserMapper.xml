@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.shiro.mapper.UserMapper">
+    <resultMap type="User" id="userMap">
+        <id property="uid" column="id"/>
+        <result property="uname" column="name"/>
+        <result property="upwd" column="pwd"/>
+        <collection property="roles" ofType="Role">
+            <id property="rid" column="id"/>
+            <result property="rname" column="name"/>
+            <collection property="permissions" ofType="Permission">
+                <id property="pid" column="id"/>
+                <result property="permission" column="permission"/>
+            </collection>
+        </collection>
+    </resultMap>
+    <select id="findUserByName" parameterType="string" resultMap="userMap">
+        SELECT u.*,r.*,p.*
+        FROM USER u
+                 INNER JOIN user_role ur ON ur.uid = u.id
+                 INNER JOIN role r ON r.id = ur.rid
+                 INNER JOIN permission_role pr ON pr.rid = r.id
+                 INNER JOIN permission p ON pr.pid = p.id
+        WHERE u.name = #{name};
+    </select>
+</mapper>

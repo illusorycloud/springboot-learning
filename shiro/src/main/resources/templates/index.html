@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+欢迎您，<span th:text="${user.uname}"></span>
+<ul>
+    <shiro:hasPermission name="add"><li>增加</li></shiro:hasPermission>
+    <shiro:hasPermission name="delete"><li>删除</li></shiro:hasPermission>
+    <shiro:hasPermission name="update"><li>修改</li></shiro:hasPermission>
+    <shiro:hasPermission name="query"><li>查询</li></shiro:hasPermission>
+</ul>
+<a href="${pageContext.request.contextPath }/logOut">点我注销</a>
+</body>
+</html>
