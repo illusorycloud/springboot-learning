@@ -1,6 +1,5 @@
 package com.example.demomq;
 
-import com.example.demomq.queue.Sender;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

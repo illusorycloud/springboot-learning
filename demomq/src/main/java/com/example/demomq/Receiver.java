@@ -1,4 +1,4 @@
-package com.example.demomq.queue;
+package com.example.demomq;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;

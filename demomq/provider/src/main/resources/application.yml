@@ -1,0 +1,18 @@
+spring:
+  rabbitmq:
+    host: 192.168.1.111
+    port: 5672
+    username: root
+    password: root
+# 交换器名称
+mq:
+  config:
+    exchange: log.direct
+    # 队列名称
+    queue:
+      info:
+        routing:
+          key: log.info.routing.key
+      error:
+        routing:
+          key: log.error.routing.key
