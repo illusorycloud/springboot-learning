@@ -4,11 +4,11 @@ spring:
     port: 5672
     username: root
     password: root
-# ½»»»Æ÷Ãû³Æ
+# è‡ªå®šä¹‰å±æ€§
 mq:
   config:
     exchange: log.direct
-    # ¶ÓÁĞÃû³Æ
+    # é˜Ÿåˆ—ä¿¡æ¯
     queue:
       info:
         routing:
