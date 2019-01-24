@@ -1,5 +1,12 @@
 spring:
   rabbitmq:
+    listener:
+      simple:
+        retry:
+          #开启重试
+          enabled: true
+          #最大重试次数
+          max-attempts: 5
     #RabbitMQ服务器地址和端口号 用户名等
     host: 192.168.1.111
     port: 5672
