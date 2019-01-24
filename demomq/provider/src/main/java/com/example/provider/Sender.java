@@ -23,7 +23,7 @@ public class Sender {
     @Value(value = "${mq.config.exchange}")
     private String exchange;
     //路由键
-    @Value(value = "${mq.config.queue.info.routing.key}")
+    @Value(value = "${mq.config.queue.info.routingkey}")
     private String routingKey;
     /**
      * 发送消息
