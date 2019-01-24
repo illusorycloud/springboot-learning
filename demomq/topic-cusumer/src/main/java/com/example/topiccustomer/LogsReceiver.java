@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
  * autoDelete:是否是一个可删除的临时队列
  * @Exchange value:交换器名称
  * type:指定具体的交换器类型
+ * key 路由键
  */
 @Component
 @RabbitListener(
