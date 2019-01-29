@@ -12,3 +12,6 @@ eureka:
     serviceUrl:
       #服务注册中心地址，指向另一个注册中心
       defaultZone: http://localhost:8761/
+security:
+  basic:
+    enabled: false
