@@ -6,14 +6,33 @@
     <title>用户登录</title>
 </head>
 <body>
+
+<!-- 提示 -->
+<h3 th:text="${info}"></h3>
+<!--<div>-->
+    <!--&lt;!&ndash; 后面添加参数起到清除缓存作用 &ndash;&gt;-->
+    <!--<img alt="验证码" onclick="this.src='/defaultKaptcha?d='+new Date()*1" src="/defaultKaptcha"/>-->
+<!--</div>-->
+<!--<form action="/imgvrifyControllerDefaultKaptcha">-->
+    <!--用户名:<label>-->
+    <!--<input type="text" name="uname">-->
+<!--</label><br/>-->
+    <!--密码:<label>-->
+    <!--<input type="password" name="upwd">-->
+<!--</label><br/>-->
+    <!--<input type="text" name="tryCode"/>-->
+    <!--<input type="submit" value="登陆"><br/>-->
+<!--</form>-->
+<hr/>
+
 <form method="post" th:action="@{/login}">
-    用户名:<label>
-    <input type="text" name="uname">
+用户名:<label>
+<input type="text" name="uname">
 </label><br/>
-    密码:<label>
-    <input type="password" name="upwd">
+密码:<label>
+<input type="password" name="upwd">
 </label><br/>
-    <input type="submit" value="登陆"><br/>
+<input type="submit" value="登陆"><br/>
 </form>
 </body>
 </html>

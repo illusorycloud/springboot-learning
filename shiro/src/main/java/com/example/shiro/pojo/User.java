@@ -2,11 +2,20 @@ package com.example.shiro.pojo;
 
 import java.util.HashSet;
 import java.util.Set;
-
 public class User {
     private Integer uid;
     private String uname;
     private String upwd;
+    private String salt;
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
     private Set<Role> roles=new HashSet<>();
 
     public Set<Role> getRoles() {

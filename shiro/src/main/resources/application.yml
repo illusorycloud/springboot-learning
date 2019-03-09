@@ -1,4 +1,3 @@
-
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -6,11 +5,11 @@ spring:
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
-  http:
-    encoding:
-      charset: utf-8
-      enabled: true
-
+  mail:
+    host: smtp.163.com
+    port: 25
+    username: cqkctandroidt
+    password: cqkct123
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.example.shiro.pojo

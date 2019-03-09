@@ -1,11 +1,13 @@
 package com.example.shiro.shiro;
 
-import com.example.shiro.pojo.Permission;
-import com.example.shiro.pojo.Role;
 import com.example.shiro.pojo.User;
 import com.example.shiro.service.impl.UserServiceImpl;
 
-import org.apache.shiro.authc.*;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.AuthenticationInfo;
+import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.SimpleAuthenticationInfo;
+import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
@@ -13,11 +15,9 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
-public class AuthRealm extends AuthorizingRealm {
+public class AuthRealm2 extends AuthorizingRealm {
     @Autowired
     private UserServiceImpl userService;
 
@@ -42,8 +42,7 @@ public class AuthRealm extends AuthorizingRealm {
     }
 
     /**
-     * 完成身份认证并返回认证信息
-     * 认证失败则返回空
+     * 认证 登陆
      *
      * @param authenticationToken
      * @return
@@ -57,8 +56,7 @@ public class AuthRealm extends AuthorizingRealm {
         User user = userService.findUserByName(username);
         //放入shiro.调用CredentialsMatcher检验密码
         System.out.println("获取到的密码" + user.getUpwd());
-//        ByteSource salt = ByteSource.Util.bytes(user.getSalt());
-//        System.out.println(salt);
+        ByteSource salt = ByteSource.Util.bytes(user.getSalt());
         return new SimpleAuthenticationInfo(user, user.getUpwd(),this.getClass().getName());
     }
 }
