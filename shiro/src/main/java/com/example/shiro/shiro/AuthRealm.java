@@ -29,15 +29,16 @@ public class AuthRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        //获取session中的用户
+        //1.获取principalCollection中的用户
         User user = (User) principalCollection.fromRealm(this.getClass().getName()).iterator().next();
-        //查询权限
-        List<String> strings = userService.selectPermissionByUserId(user.getUid());
+        //2.通过数据库查询当前userde权限
+        List<String> permissions = userService.selectPermissionByUserId(user.getUid());
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
-        //将权限放入shiro中.
-        simpleAuthorizationInfo.addStringPermissions(strings);
+        //3.将权限放入shiro中.
+        simpleAuthorizationInfo.addStringPermissions(permissions);
 //        System.out.println("添加时的权限" + permission.toString());
         System.out.println("-------------授权-------------");
+        //4.返回
         return simpleAuthorizationInfo;
     }
 

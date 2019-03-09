@@ -7,6 +7,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -43,7 +44,7 @@ public class UserController {
         request.getSession().removeAttribute("user");
         return "login";
     }
-
+@RequiresRoles("admin")
     @RequiresPermissions(value = "add")
     @RequestMapping(value = "/test")
     public String test(HttpServletRequest request, String test) {
