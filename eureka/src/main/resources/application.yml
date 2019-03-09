@@ -1,0 +1,27 @@
+#--------------eureka入门---------------
+#server:
+#  port: 8761
+#
+#eureka:
+#  client:
+#    #是否将自己注册到EurekaServer中
+#    register-with-eureka: false
+#    #是否从Eureka-Server中获取服务注册信息
+#    fetch-registry: false
+
+
+#-------------eureka集群----------------
+server:
+  port: 8761
+eureka:
+  instance:
+    #eureka实例名称 尽量与配置文件一致
+    hostname: eureka1
+  client:
+    #是否将自己注册到EurekaServer中
+    registerWithEureka: false
+    #是否从Eureka-Server中获取服务注册信息
+    fetchRegistry: false
+    serviceUrl:
+      #服务注册中心地址，指向另一个注册中心
+      defaultZone: http://localhost:8762/

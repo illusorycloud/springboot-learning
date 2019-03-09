@@ -1,0 +1,10 @@
+server:
+  port: 8763
+eureka:
+  client:
+    registerWithEureka: true
+    #是否从Eureka-Server中获取服务注册信息
+    fetchRegistry: false
+    serviceUrl:
+      #服务注册中心地址，需要向所有的两个节点注册
+      defaultZone: http://localhost:8761/

@@ -1,0 +1,25 @@
+spring:
+  rabbitmq:
+    listener:
+      simple:
+        retry:
+          #开启重试
+          enabled: true
+          #最大重试次数
+          max-attempts: 5
+    #RabbitMQ服务器地址和端口号 用户名等
+    host: 192.168.1.111
+    port: 5672
+    username: root
+    password: root
+# 自定义属性 交换器名称和路由键
+mq:
+  config:
+    exchange: log.direct
+    queue:
+      info:
+        routingkey: log.info.routing.key
+      error:
+        routingkey: log.error.routing.key
+server:
+  port: 8081
