@@ -1,0 +1,18 @@
+spring:
+  # 项目名
+  application:
+    name: dubbo-provider-demo
+dubbo:
+  # dubbo应用名
+  application:
+    name: dubbo-provider
+    # 用于配置提供服务的协议信息，协议由提供方指定，消费方被动接受
+  protocol:
+    name: dubbo
+    port: 12345
+  scan:
+    # 配置dubbo组件扫描
+    base-packages: com.illusory.dubboservice
+    # ZooKeeper注册中心
+  registry:
+    address: zookeeper://192.168.5.111:2181
