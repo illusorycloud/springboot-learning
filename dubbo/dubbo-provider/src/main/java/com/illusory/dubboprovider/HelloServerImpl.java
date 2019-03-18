@@ -1,15 +1,13 @@
-package com.illusory.dubboservice.service.impl;
-
-import com.illusory.dubboservice.service.DubboService;
+package com.illusory.dubboprovider;
 
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Value;
 
-/**
- * @author illusory
- */
 @Service(version = "1.0.0")
-public class DubboServiceImpl implements DubboService {
+public class HelloServerImpl implements HelloServer {
+    /**
+     * The default value of ${dubbo.application.name} is ${spring.application.name}
+     */
     @Value("${dubbo.application.name}")
     private String serviceName;
 
