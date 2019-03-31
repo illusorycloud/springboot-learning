@@ -7,6 +7,17 @@ spring:
     encoding: UTF-8
     servlet:
       content-type: text/html
+  #去配置中心加载配置文件 然后这里面的其他东西都可以省略了
+  cloud:
+    config:
+      #配置服务中心的网址
+      uri: http://localhost:8888
+      #配置文件名称的前缀
+      name: config-client
+      #配置仓库的分支
+      label: master
+      #配置文件的环境标识
+      profile: dev
 server:
   port: 8765
 eureka:
