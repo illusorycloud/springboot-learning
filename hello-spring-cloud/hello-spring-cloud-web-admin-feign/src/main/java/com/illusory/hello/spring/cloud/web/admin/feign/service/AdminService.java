@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @version 1.0.0
  * @date 2019/3/30 23:14
  */
-@FeignClient(value = "hello-spring-cloud-service-admin")
+@FeignClient(value = "hello-spring-cloud-service-admin",fallback = AdminServiceHystrix.class)
 public interface AdminService {
 
     @RequestMapping(value = "hello", method = RequestMethod.GET)
