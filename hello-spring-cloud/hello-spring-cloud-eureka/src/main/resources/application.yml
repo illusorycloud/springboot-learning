@@ -1,7 +1,10 @@
 spring:
   application:
     name: hello-spring-cloud-eureka
-
+  boot:
+    admin:
+      client:
+        url: http://localhost:8084
 server:
   port: 8761
 

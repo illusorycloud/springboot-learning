@@ -18,6 +18,12 @@ spring:
       label: master
       #配置文件的环境标识
       profile: dev
+  zipkin:
+    base-url: http://localhost:9411
+  boot:
+    admin:
+      client:
+        url: http://localhost:8084
 server:
   port: 8765
 eureka:
