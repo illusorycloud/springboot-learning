@@ -1,5 +1,6 @@
 package com.illusory.hello.spring.cloud.web.admin.feign.service;
 
+import com.illusory.hello.spring.cloud.web.admin.feign.hystrix.AdminServiceHystrix;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
