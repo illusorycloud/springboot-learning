@@ -20,6 +20,7 @@ dubbo:
     name: dubbo
     port: 12345
     status: server
+    serialization: kryo
   registry:
     id: zookeeper
     #zookeeper集群
