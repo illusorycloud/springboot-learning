@@ -49,3 +49,5 @@
 /.mvn/
 /mvnw
 /mvnw.cmd
+
+**/target/
