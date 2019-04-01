@@ -13,6 +13,9 @@ dubbo:
     name: hello-dubbo-service-user-provider
     qos-port: 22222
     qos-enable: true
+  provider:
+    #负载均衡策略 默认为随机
+    loadbalance: roundrobin
   protocol:
     id: dubbo
     name: dubbo
