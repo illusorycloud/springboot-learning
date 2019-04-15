@@ -1,1 +1,1 @@
-这是一个小菜鸟在学`SpringBoot`，`SpringCloud`时的记录与总结。
+`SpringBoot`，`SpringCloud`入门系列教程。
