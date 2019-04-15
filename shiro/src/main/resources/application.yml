@@ -8,8 +8,8 @@ spring:
   mail:
     host: smtp.163.com
     port: 25
-    username: cqkctandroidt
-    password: cqkct123
+    username: xxx
+    password: xxx
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.example.shiro.pojo

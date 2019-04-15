@@ -51,3 +51,5 @@
 /mvnw.cmd
 
 **/target/
+/shiro/mvnw.cmd
+/shiro/mvnw
