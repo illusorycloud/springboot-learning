@@ -37,7 +37,10 @@ public class UserController {
     @RequestMapping(value = "/logout")
     public String logout(HttpServletRequest request) {
         Subject subject = SecurityUtils.getSubject();
-        subject.logout();
+        // 执行注销
+        if (subject.isAuthenticated()) {
+            subject.logout();
+        }
         request.getSession().removeAttribute("user");
         return "login";
     }
